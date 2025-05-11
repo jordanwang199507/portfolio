@@ -1,0 +1,218 @@
+.canvas {
+  width: 30vmin;
+  height: 30vmin;
+  position: relative;
+}
+
+.snivy.container {
+  width: 62%;
+  height: 62%;
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.snivy.head {
+  width: 100%;
+  height: 102%;
+  -webkit-border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+  border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+  background: #dde0a1;
+  -webkit-transform: rotateZ(135deg);
+  transform: rotateZ(135deg);
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 -0.2vmin 1.2vmin 0.1vmin #1a1b1a46;
+}
+.snivy.head-decor {
+  position: absolute;
+  top: 1%;
+  left: 40%;
+  transform: translate(-30%, 2%) rotate(90deg);
+  border-radius: 0 165px;
+  width: 80%;
+  height: 80%;
+  background: #61b662;
+}
+.snivy.head-decor::before {
+  content: "";
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  background: #61b662;
+}
+.snivy-eye {
+  position: absolute;
+  left: -15%;
+  top: -2%;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 55%;
+  height: 55%;
+  z-index: 10;
+  overflow: hidden;
+  transform: rotate(-130deg);
+}
+.snivy-eye + .snivy-eye {
+  left: 49%;
+  top: 58%;
+  transform: rotate(219deg) scaleX(-1);
+}
+
+.snivy-eye-decor {
+  position: absolute;
+  left: 85%;
+  bottom: 25%;
+  width: 20%;
+  height: 20%;
+  transform: rotate(-17deg);
+  background: #e8c953;
+}
+
+.snivy-eye-decor + .snivy-eye-decor {
+  left: auto;
+  right: 58%;
+  bottom: 79%;
+  transform: rotate(17deg);
+}
+
+.snivy-eye-pupil {
+  border-radius: 50%;
+  width: 55%;
+  height: 55%;
+  background: #c1695b;
+  position: absolute;
+  left: -5%;
+  bottom: 0%;
+}
+.snivy-eye-pupil::before {
+  content: "";
+  width: 20%;
+  height: 45%;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  background: #2b2a27;
+}
+.snivy-eye-glare {
+  position: absolute;
+  right: 30%;
+  top: 12%;
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.snivy-eye-glare::before {
+  content: "";
+  position: absolute;
+  right: -20%;
+  top: 150%;
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.snivy-eye-eyebrow {
+  position: absolute;
+  top: 10%;
+  left: -17%;
+  height: 62%;
+  width: 100%;
+  background: linear-gradient(to right, #e8c953, #fef692);
+  border-radius: 50%;
+  transform: rotate(130deg);
+  clip-path: polygon(0% 50%, 150% 50%, 150% 100%, 0% 100%);
+  z-index: 20;
+}
+
+.snivy-body {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 41%;
+  height: 40%;
+  background: #61b662;
+  box-shadow: 0 -0.2vmin 1.2vmin 0.1vmin #1a1b1a46;
+}
+.snivy-body::before {
+  content: "";
+  position: absolute;
+  background: var(--color-background);
+  /* background: red; */
+  width: 48%;
+  height: 120%;
+  border-radius: 50%;
+  left: -31%;
+  bottom: -8%;
+  transform: rotate(-8deg);
+}
+.snivy-body::after {
+  content: "";
+  position: absolute;
+  background: var(--color-background);
+  width: 48%;
+  height: 120%;
+  border-radius: 50%;
+  right: -31%;
+  bottom: -5%;
+  transform: rotate(8deg);
+}
+.snivy-innerbody {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 50%;
+  background: #dde0a1;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.snivy-innerbody::before {
+  content: "";
+  position: absolute;
+  height: 5%;
+  width: 100%;
+  transform: rotate(180deg);
+  border: 0.25vmin solid rgba(49, 166, 39, 0.789);
+  border-radius: 50%;
+  border-right: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+  top: 60%;
+}
+.snivy-whip {
+  box-shadow: 0 -0.2vmin 1.2vmin 0.1vmin #1a1b1a46;
+  position: absolute;
+  width: 25%;
+  height: 40%;
+  border-radius: 50%;
+  background: linear-gradient(to top, #e8c953, #fef692);
+  z-index: 2;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    ellipse 40% 60% at 30% 20%,
+    transparent 18%,
+    black 0
+  );
+  mask-image: radial-gradient(
+    ellipse 250% 200% at 30% 55%,
+    transparent 18%,
+    black 0
+  );
+  bottom: -15%;
+  left: 15%;
+  transform: rotate(-35deg);
+}
+.snivy-whip + .snivy-whip {
+  transform: scaleX(-1) rotate(-35deg);
+  left: auto;
+  right: 15%;
+}

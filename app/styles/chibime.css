@@ -1,0 +1,446 @@
+:root {
+  --foreground: #ffca4f;
+  --foregroud-secondary: #9b6d00;
+  --skin: #e2d1c4;
+  --line: rgba(0, 0, 0, 0.616);
+  --hair: #262525;
+  --shirt: #b0b9b7;
+  --shirt02: #8b8b8b;
+}
+
+.portrait {
+  background: linear-gradient(
+    to bottom,
+    var(--foreground) 20%,
+    var(--foregroud-secondary)
+  );
+}
+
+.portrait div {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.character {
+  position: absolute;
+  bottom: 0.5%;
+  width: 100%;
+  height: 100%;
+}
+
+.face {
+  width: 60%;
+  height: 52%;
+  background: var(--skin);
+  border-radius: 70% 70% / 20% 20% 60% 60%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neck {
+  width: 15%;
+  height: 20%;
+  background: var(--skin);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 8vmin;
+  box-shadow: inset 0vmin 9.5vmin 0 -5vmin rgba(0, 0, 0, 0.108),
+    inset 0 -2vmin 0 -1vmin rgba(0, 0, 0, 0.446), inset 0 -2vmin 0 -1vmin white;
+}
+
+.eye {
+  width: 25%;
+  height: 19%;
+  background: white;
+  border-radius: 100% 0% 80% 50% / 90% 20% 80% 10%;
+  top: 40%;
+  right: 7%;
+  transform: rotate(15deg);
+  box-shadow: 0 -0.3vmin var(--line);
+  overflow: hidden;
+  filter: drop-shadow(0vmin 0.2vmin black) drop-shadow(0vmin -0.2vmin black)
+    drop-shadow(0.5vmin 0vmin black);
+
+  animation: blink 6s infinite;
+}
+
+.eye + .eye {
+  transform: scaleX(-1) rotate(15deg);
+  left: auto;
+  right: 68%;
+  animation: blinkRight 6s infinite;
+}
+
+@keyframes blink {
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: rotate(15deg) scaleY(1);
+  }
+  10%,
+  20%,
+  70% {
+    transform: rotate(15deg) scaleY(0);
+  }
+}
+@keyframes blinkRight {
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: rotate(-12deg) scaleX(-1) scaleY(1);
+  }
+  10%,
+  20%,
+  70% {
+    transform: rotate(-12deg) scaleX(-1) scaleY(0);
+  }
+}
+
+.pupil {
+  width: 50%;
+  height: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #a6cccd;
+  top: 0%;
+  left: 15%;
+  filter: drop-shadow(0vmin 0.3vmin black) drop-shadow(0vmin -0.3vmin black)
+    drop-shadow(0.3vmin 0vmin black) drop-shadow(-0.3vmin 0vmin black);
+  box-shadow: inset 1vmin 1vmin 0 -0.1vmin rgba(0, 0, 0, 0.48);
+}
+
+.eye-bright {
+  width: 1vmin;
+  height: 1vmin;
+  background: rgb(59, 59, 59);
+  border-radius: 50%;
+  top: 30%;
+  left: 30%;
+}
+
+.mouth {
+  width: 20%;
+  height: 11%;
+  border: 0.25vmin solid rgba(0, 0, 0, 0.789);
+  border-radius: 50%;
+  border-right: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 0);
+}
+.nose {
+  width: 1%;
+  height: 1%;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, 0%);
+  background: black;
+  border-radius: 50%;
+}
+
+.ear {
+  width: 10%;
+  height: 16%;
+  background: var(--skin);
+  border-radius: 90% 39% 60% 52% / 40% 50% 60% 80%;
+  top: 42%;
+  right: 14%;
+  transform: rotate(15deg);
+  box-shadow: inset 10vmin 0 0.5vmin -7vmin rgba(0, 0, 0, 0.13),
+    inset -10vmin 10vmin 1vmin -10vmin rgba(0, 0, 0, 0.068);
+}
+
+.ear + .ear {
+  transform: scaleX(-1) rotate(15deg);
+  right: auto;
+  left: 14.125%;
+}
+
+.ear:before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  border-radius: 50% 100% 0 0;
+  top: 15%;
+  left: 30%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+  border: 0.25vmin solid var(--line);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.ear::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 3vmin;
+  border: 0.25vmin solid var(--line);
+  border-radius: 50%;
+  top: 45%;
+  right: 32%;
+}
+
+.cheek {
+  width: 30%;
+  height: 10%;
+  background: rgba(255, 0, 0, 0.175);
+  border-radius: 20% 20% 100% 100%;
+  top: 60%;
+  right: 4%;
+  filter: blur(1.2vmin);
+}
+.cheek + .cheek {
+  transform: skewX(-1);
+  left: 4%;
+  right: auto;
+}
+
+.eyebrow {
+  width: 17%;
+  height: 12%;
+  top: 30%;
+  right: 26%;
+  transform: rotate(-12deg);
+  border-radius: 100% 90% 100% 40% / 70% 100% 90% 100%;
+  box-shadow: -0.25vmin -1.2vmin 0 -0.55vmin rgba(0, 0, 0, 0.766);
+  z-index: 5;
+}
+
+.eyebrow + .eyebrow {
+  transform: scaleX(-1) rotate(-10deg);
+  width: 17%;
+  left: 25%;
+  top: 31%;
+  right: auto;
+}
+
+.hair-back {
+  width: 70%;
+  height: 65%;
+  background: var(--hair);
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 100% 100% / 80% 80% 120% 120%;
+}
+
+.hair-front-1 {
+  width: 40%;
+  height: 35%;
+  background: var(--hair);
+  border-radius: 100% 0 130% 0;
+  left: 9%;
+  top: 4%;
+  transform: rotate(-10deg);
+  z-index: 10;
+}
+
+.hair-front-1:before,
+.hair-front-2:before,
+.hair-front-3:before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 70%;
+  border-radius: 50%;
+  transform: rotate(25deg) scaleX(1);
+  top: 10%;
+  left: 25%;
+  background: rgba(76, 76, 76, 0.453);
+  border-radius: 100% 0 130% 0;
+  z-index: 11;
+  filter: blur(2vmin);
+}
+
+.hair-front-1 + .hair-front-1 {
+  width: 40%;
+  height: 30%;
+  right: 10%;
+  top: 7%;
+  left: auto;
+  transform: scaleX(-1) rotate(-34deg);
+}
+
+.hair-front-2 {
+  width: 40%;
+  height: 27%;
+  left: 28%;
+  top: 8%;
+  background-color: var(--hair);
+  transform: rotate(125deg);
+  border-radius: 100% 0 140% 0%;
+  z-index: 10;
+}
+
+.hair-front-2 + .hair-front-2 {
+  top: -7%;
+  left: 32%;
+  width: 25%;
+  height: 20%;
+  transform: rotate(-10deg);
+  z-index: 11;
+}
+
+.hair-front-3 {
+  width: 30%;
+  height: 25%;
+  transform: rotate(20deg);
+  left: 17%;
+  top: -8%;
+  background-color: var(--hair);
+  border-radius: 100% 0 100% 0;
+  z-index: 10;
+}
+
+.hair-front-3 + .hair-front-3 {
+  transform: scaleX(-1) rotate(30deg);
+  right: 20%;
+  top: -9%;
+  left: auto;
+}
+
+.hair-front-4 {
+  position: absolute;
+  width: 35%;
+  height: 28%;
+  border-radius: 50%;
+  transform: rotate(40deg) scaleX(-1);
+  left: 59.5%;
+  top: 15%;
+  box-shadow: 3vmin 0vmin var(--hair);
+  clip-path: polygon(0% 50%, 150% 50%, 150% 100%, 0% 100%);
+  z-index: 5;
+}
+
+.hair-front-4 + .hair-front-4 {
+  transform: scaleX(1) rotate(-30deg);
+  box-shadow: 3vmin 0vmin var(--hair);
+  left: 5%;
+  top: 12%;
+}
+
+.hair-front-4 + .hair-front-4 + .hair-front-4 {
+  transform: scaleX(-1) rotate(-10deg);
+  right: -10%;
+  top: -10%;
+  left: auto;
+}
+
+.hair-front-5 {
+  position: absolute;
+  width: 35%;
+  height: 28%;
+  border-radius: 50%;
+  transform: scaleX(1) rotate(0deg);
+  box-shadow: 3vmin 0vmin var(--hair);
+  left: -10%;
+  top: -13%;
+  clip-path: polygon(0% 50%, 150% 50%, 150% 100%, 0% 100%);
+  z-index: 5;
+}
+
+.glasses {
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  height: 7vmin;
+  width: 60%;
+}
+.glasses:before {
+  content: "";
+  position: absolute;
+  left: 38%;
+  top: 40%;
+  width: 5.5vmin;
+  height: 1vmin;
+  background: black;
+}
+
+.lense {
+  width: 38%;
+  height: 100%;
+  border: 0.5vmin solid black;
+  background: #ffffff5a;
+  border-radius: 20%;
+}
+.lense + .lense {
+  right: 0;
+}
+
+.shirt-neck {
+  border-top: solid 3vmin var(--shirt02);
+  border-right: solid 5vmin transparent;
+  border-bottom: solid 3vmin transparent;
+  border-left: solid 1vmin transparent;
+  transform: rotate(75deg);
+  left: 29%;
+  bottom: 10%;
+}
+
+.shirt-neck + .shirt-neck {
+  right: 29%;
+  left: auto;
+  transform: scaleX(-1) rotate(75deg);
+}
+
+.shirt-neck-second {
+  content: "";
+  position: absolute;
+  border-top: solid 2vmin var(--shirt02);
+  border-right: solid 4vmin transparent;
+  border-bottom: solid 3vmin transparent;
+  border-left: solid 1vmin transparent;
+  transform: rotate(65deg);
+  left: 33%;
+  bottom: 5%;
+}
+
+.shirt-neck-second + .shirt-neck-second {
+  right: 33%;
+  left: auto;
+  transform: scaleX(-1) rotate(65deg);
+}
+
+.shoulders {
+  width: 60%;
+  height: 32%;
+  background: var(--shirt);
+  border-radius: 50%;
+  bottom: -1%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  clip-path: polygon(
+    10% 40%,
+    40% 10%,
+    40% 0%,
+    60% 0%,
+    60% 10%,
+    90% 40%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+.pocket {
+  width: 20%;
+  height: 30%;
+  border-radius: 0 0 100% 100%;
+  background: white;
+  position: absolute;
+  right: 15%;
+  top: 60%;
+}

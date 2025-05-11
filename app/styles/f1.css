@@ -1,0 +1,612 @@
+.f1-theme--mclaren {
+  --helmet01: rgb(255, 238, 0);
+  --chassis: #ff6600;
+  --chassis-decor: #000000;
+  --chassis-bottom-decor: #000000;
+  --chassis-bottom-decor-inner: rgb(1, 243, 179);
+  --nose-bottom: #5b5b5b;
+  --wing: #ff2f00;
+}
+
+.f1-theme--ferrari {
+  --helmet01: #f6fbfb;
+  --chassis: #ff0000;
+  --chassis-decor: rgb(255, 238, 0);
+  --chassis-bottom-decor: #222222;
+  --chassis-bottom-decor-inner: #aaaaaa;
+  --nose-bottom: #333333;
+  --wing: #bb0202;
+}
+
+.f1-theme--redbull {
+  --helmet01: #e9b171;
+  --chassis: #090942;
+  --chassis-decor: #ffcd00;
+  --chassis-bottom-decor: #d71920;
+  --chassis-bottom-decor-inner: #ffffff;
+  --nose-bottom: #040405;
+  --wing: #000000;
+}
+
+.f1-theme--sauber {
+  --helmet01: #b5ff00;
+  --chassis: #6cf40a;
+  --chassis-decor: #e0ff91;
+  --chassis-bottom-decor: #1a1a1a;
+  --chassis-bottom-decor-inner: #444444;
+  --nose-bottom: #000000;
+  --wing: #111111;
+}
+
+.helmet {
+  position: absolute;
+  bottom: 21.5%;
+  left: 35%;
+  width: 9%;
+  height: 8%;
+  background: var(--helmet01);
+  border-top-left-radius: 80%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 10%;
+  z-index: 6;
+  overflow: hidden;
+  box-shadow: 0 0vmin 0.5vmin 0.3vmin rgba(108, 8, 8, 0.453);
+}
+.helmet::before {
+  position: absolute;
+  top: 45%;
+  content: "";
+  height: 30%;
+  width: 50%;
+  background: rgb(83, 14, 14);
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+.helmet-bottom-panel {
+  width: 13%;
+  height: 1.3%;
+  background: rgb(83, 14, 14);
+  position: absolute;
+  bottom: 20.5%;
+  left: 31%;
+  z-index: 6;
+  border-top-left-radius: 50%;
+}
+.helmet-back-panel {
+  width: 2%;
+  height: 6%;
+  background: rgb(83, 14, 14);
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  position: absolute;
+  bottom: 21.5%;
+  left: 44%;
+  z-index: 4;
+}
+
+.f1-mirror-container {
+  position: absolute;
+  bottom: 21%;
+  left: 23%;
+  width: 5%;
+  height: 5%;
+}
+.f1-mirror-top {
+  margin-top: 25%;
+  width: 100%;
+  height: 35%;
+  background: #f32f22;
+}
+.f1-mirror-bottom {
+  width: 100%;
+  height: 20%;
+  background: rgb(83, 14, 14);
+}
+.f1-mirror-support {
+  width: 25%;
+  height: 20%;
+  margin-left: 25%;
+  background: rgb(47, 6, 6);
+}
+
+.f1-chassis {
+  position: absolute;
+  bottom: 3%;
+  right: 4%;
+  width: 69%;
+  height: 18%;
+  /* background: #f32f22; */
+  background: var(--chassis);
+  z-index: 3;
+}
+
+.f1-chassis::before {
+  content: "";
+  width: 115%;
+  height: 10%;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  background: rgb(83, 83, 83);
+}
+
+.f1-chassis-decor01 {
+  position: absolute;
+  width: 59%;
+  height: 10%;
+  background: var(--chassis);
+  bottom: 4.8%;
+  left: 26%;
+  z-index: 5;
+  border-top-right-radius: 90%;
+}
+.f1-chassis-decor02 {
+  width: 10%;
+  height: 5.4%;
+  background: var(--chassis);
+
+  position: absolute;
+  bottom: 4.6%;
+  left: 23%;
+  z-index: 50;
+  border-top-right-radius: 80%;
+}
+.f1-chassis-decor03 {
+  width: 5%;
+  height: 6%;
+  position: absolute;
+  bottom: 4%;
+  left: 17%;
+  z-index: 50;
+}
+.f1-chassis-decor03-curve {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background: var(--chassis);
+}
+.f1-chassis-decor03-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #212121;
+  border-top-right-radius: 2vmin;
+}
+.f1-chassis-decor04 {
+  width: 18%;
+  height: 8%;
+  background: var(--chassis-bottom-decor);
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  position: absolute;
+  bottom: 8%;
+  right: 32%;
+  z-index: 6;
+}
+.f1-chassis-decor04::before {
+  content: "";
+  position: absolute;
+  right: -47%;
+  width: 60%;
+  height: 100%;
+  background: var(--chassis-bottom-decor);
+
+  border-top-right-radius: 100%;
+}
+.f1-chassis-decor04::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0%, -50%);
+  height: 70%;
+  width: 15%;
+  background: var(--chassis-bottom-decor-inner);
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+
+.f1-wheel {
+  position: absolute;
+  box-shadow: 0 0rem 0.2rem 0.2rem #ffa57b3a;
+  bottom: 0%;
+  left: -14%;
+  border-radius: 50%;
+  height: 22%;
+  width: 22%;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.f1-wheel-line {
+  --g: 0.5rem;
+  --s: 0.1rem;
+
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+}
+.f1-wheel-line:before,
+.f1-wheel-line:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: var(--s) solid var(--c, #f81a1a);
+  border-radius: 50%;
+  clip-path: polygon(
+    calc(50% + var(--g) / 2) 50%,
+    calc(50% + var(--g) / 2) 0%,
+    100% 0%,
+    100% calc(33.745% - var(--g) / 2),
+    50% calc(50% - var(--g) / 2)
+  );
+}
+
+.f1-wheel-line:after {
+  clip-path: polygon(
+    calc(50% - var(--g) / 2) 50%,
+    calc(50% - var(--g) / 2) 0%,
+    0% 0%,
+    0% 100%,
+    100% 100%,
+    100% calc(33.745% + var(--g) / 2),
+    50% calc(50% + var(--g) / 2)
+  );
+  --c: #f81a1a;
+}
+.f1-wheel.rear {
+  left: auto;
+  right: -5%;
+  bottom: 0%;
+}
+.f1-wheel.rear .f1-wheel-line {
+  transform: rotate(210deg);
+}
+.f1-outter-rim {
+  width: 68%;
+  height: 68%;
+  border-radius: 50%;
+  border: solid 0.1rem rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.f1-inner-rim {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 0.15rem solid #829fa6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: cneter;
+  transform: rotate(15deg);
+}
+.f1-inner-spoke {
+  position: absolute;
+  left: 50%;
+  height: 110%;
+  width: 0.15rem;
+  background: #353636;
+  transform: rotate(45deg) translate(-50%);
+}
+.f1-inner-spoke + .f1-inner-spoke {
+  transform: rotate(-45deg) translate(-50%);
+}
+
+.f1-inner-spoke + .f1-inner-spoke + .f1-inner-spoke {
+  top: 2%;
+  transform: rotate(90deg) translate(-50%);
+}
+.f1-inner-spoke + .f1-inner-spoke + .f1-inner-spoke + .f1-inner-spoke {
+  top: 2%;
+  transform: rotate(0deg) translate(-50%);
+}
+.f1-inner-rim::after {
+  content: "";
+  position: absolute;
+  border: 0.4rem solid #1a1c1d;
+  background: #212121;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.f1-front-wing.rear-top {
+  position: absolute;
+  right: 72%;
+  bottom: 14%;
+  height: 7%;
+  width: 12%;
+  background: var(--chassis);
+}
+
+.f1-front-wing.rear-top01 {
+  width: 58%;
+  height: 6%;
+  position: absolute;
+  right: 83%;
+  bottom: 14.8%;
+}
+.f1-front-wing-nose-front {
+  width: 60%;
+  height: 90%;
+  position: absolute;
+  background: var(--chassis);
+  left: 1%;
+  bottom: 0%;
+  border-top-left-radius: 200%;
+}
+.f1-front-wing-nose-back {
+  height: 100%;
+  width: 40%;
+  background: var(--chassis);
+  right: 0;
+  bottom: 2%;
+  position: absolute;
+}
+
+.f1-front-wing.rear-bottom {
+  position: absolute;
+  right: 73%;
+  bottom: 10%;
+  height: 5%;
+  width: 18%;
+  background: var(--nose-bottom);
+  z-index: 10;
+}
+.f1-front-wing.rear-bottom01 {
+  position: absolute;
+  right: 89%;
+  bottom: 10%;
+  height: 5%;
+  width: 46%;
+  background: var(--nose-bottom);
+  z-index: 2;
+}
+.f1-front-wing.rear-bottom02 {
+  position: absolute;
+  right: 135%;
+  border-bottom-left-radius: 5vmin;
+  bottom: 10%;
+  height: 5%;
+  width: 5%;
+  background: var(--nose-bottom);
+}
+
+.f1-front-wing-front-bottom {
+  z-index: 1;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  bottom: 0%;
+  left: -41%;
+}
+
+.f1-front-wing-bottom-support {
+  width: 20%;
+  height: 40%;
+  background: rgb(126, 55, 55);
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
+.f1-front-wing-bottom-angle {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 10%;
+}
+.f1-front-wing-bottom-right {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--chassis);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 100%;
+}
+.f1-front-wing-bottom-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 80%;
+  background: var(--chassis);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 100%;
+}
+.f1-front-wing-bottom-center {
+  width: 50%;
+  height: 90%;
+  background: var(--chassis);
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  position: absolute;
+  left: 25%;
+  transform: rotate(-8deg);
+  bottom: -5%;
+}
+
+.f1-front-wing-bottom-angle-protector {
+  content: "";
+  width: 102%;
+  height: 8%;
+  background: rgb(110, 101, 101);
+  position: absolute;
+  bottom: 5%;
+}
+
+.f1-roof-scoop01 {
+  position: absolute;
+  bottom: 21%;
+  right: 13%;
+  width: 45%;
+  height: 14%;
+  background: var(--chassis);
+  border-top-right-radius: 100%;
+  z-index: 1;
+}
+
+.f1-roof-scoop03 {
+  z-index: 0;
+  width: 10%;
+  height: 5%;
+  background: var(--chassis);
+  position: absolute;
+  bottom: 34%;
+  right: 45%;
+  transform: rotate(5deg);
+}
+.f1-roof-scoop03::after {
+  content: "";
+  position: absolute;
+  right: -55%;
+  width: 80%;
+  height: 100%;
+  border-top-right-radius: 2vmin;
+  background: var(--chassis);
+}
+
+.f1-roof-scoop-decor01 {
+  height: 19%;
+  width: 10%;
+  background: var(--chassis);
+  position: absolute;
+  bottom: 16.5%;
+  right: 54%;
+  z-index: 3;
+}
+.f1-roof-scoop-decor02 {
+  width: 40%;
+  height: 10%;
+  background: red;
+  background: var(--chassis-decor);
+  position: absolute;
+  border-top-right-radius: 100%;
+  bottom: 20.5%;
+  left: 40%;
+  z-index: 3;
+}
+
+.f1-wing-bottom01 {
+  position: absolute;
+  right: -10%;
+  bottom: 11%;
+  width: 14%;
+  height: 15%;
+  background: #423d3d;
+  z-index: 2;
+  position: absolute;
+  border-bottom-right-radius: 40%;
+}
+
+.f1-wing-top01 {
+  width: 25%;
+  height: 7%;
+  background: var(--wing);
+  position: absolute;
+  right: -15%;
+  bottom: 28%;
+  z-index: 4;
+  transform: rotate(1deg);
+}
+.f1-wing-top02 {
+  width: 17.8%;
+  height: 5%;
+  background: var(--wing);
+  position: absolute;
+  right: -11.5%;
+  bottom: 24%;
+  z-index: 4;
+  transform: rotate(-3deg);
+  box-shadow: 0 1vmin 2vmin 0.2vmin rgba(0, 0, 0, 0.36);
+}
+.f1-wing-top02::before {
+  height: 100%;
+  width: 30%;
+  border-bottom-left-radius: 5vmin;
+  content: "";
+  position: absolute;
+  background: var(--wing);
+  left: -20%;
+}
+.f1-wing-top02::after {
+  height: 100%;
+  width: 30%;
+  border-bottom-right-radius: 5vmin;
+  content: "";
+  position: absolute;
+  background: var(--wing);
+  right: -20%;
+}
+
+.f1-diffuser {
+  width: 10%;
+  height: 15%;
+  background: #655f5e;
+  border-bottom-right-radius: 25%;
+  position: absolute;
+  right: -7%;
+  bottom: 3%;
+}
+
+@keyframes f1LoopAcrossScreen {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(120vw);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-f1-loop {
+  animation: f1LoopAcrossScreen 12s linear infinite;
+}
+
+@keyframes spinWheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.f1-wheel-spin {
+  animation: spinWheel 0.6s linear infinite;
+}

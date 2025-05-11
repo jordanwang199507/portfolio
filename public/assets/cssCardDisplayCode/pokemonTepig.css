@@ -1,0 +1,192 @@
+.canvas {
+  width: 30vmin;
+  height: 30vmin;
+  position: relative;
+}
+
+.tepig-ear {
+  position: absolute;
+  top: 3%;
+  left: 32%;
+  width: 3vmin;
+  height: 6vmin;
+  border-radius: 0px 250px;
+  background: linear-gradient(to top left, #34282b 25%, #60504d);
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+.tepig-ear + .tepig-ear {
+  left: auto;
+  right: 32%;
+  background: linear-gradient(to top right, #34282b 25%, #60504d);
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.tepig.head {
+  border-radius: 50%;
+  height: 60%;
+  width: 60%;
+  background: linear-gradient(to left, #e08858 50%, #eea270);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.1rem 0.1rem #be543a4b;
+  z-index: 2;
+}
+
+.tepig-head-pattern {
+  border-radius: 50%;
+  height: 100%;
+  width: 90%;
+  background: linear-gradient(to top left, #34282b 25%, #60504d);
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -40%);
+}
+
+.tepig-head-inner-pattern {
+  height: 40%;
+  width: 40%;
+  border-radius: 0 70px;
+  background: linear-gradient(to top, #f5d063 50%, #fcf2a2);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.head .tepig-eye {
+  position: absolute;
+  top: 35%;
+  left: 8%;
+  width: 25%;
+  height: 35%;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.head .tepig-eye + .tepig-eye {
+  right: 8%;
+  left: auto;
+  transform: scaleX(-1);
+}
+
+.tepig-pupil {
+  border-radius: 50%;
+  position: absolute;
+  left: 53%;
+  top: 25%;
+  width: 40%;
+  height: 45%;
+  background: #34282b;
+  overflow: hidden;
+}
+.tepig-pupil::before {
+  content: "";
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #595450;
+  filter: blur(0.2vmin);
+}
+.tepig-pupil::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  height: 40%;
+  width: 35%;
+  background: #ffffff;
+  left: 35%;
+  top: 10%;
+}
+
+.tepig-nose {
+  width: 28%;
+  height: 23%;
+  border-radius: 50%;
+  box-shadow: inset 0vmin -0.5vmin rgba(169, 84, 76, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #cd6862;
+}
+
+.tepig-nose::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  border-radius: 50%;
+  height: 15%;
+  width: 5%;
+  transform: rotate(-5deg);
+  background-color: #34282b;
+}
+.tepig-nose::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 30%;
+  border-radius: 50%;
+  height: 15%;
+  width: 5%;
+  transform: rotate(5deg);
+  background-color: #34282b;
+}
+
+.tepig-mouth {
+  border-radius: 50%;
+  position: absolute;
+  width: 15%;
+  height: 20%;
+  background: #904a57e2;
+  bottom: 4%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: hidden;
+}
+.tepig-mouth::after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0%;
+  height: 70%;
+  width: 100%;
+  background: radial-gradient(circle at bottom, #e98c94, #d9747a);
+}
+
+.tepig-body {
+  position: absolute;
+  left: 50%;
+  bottom: -48%;
+  transform: translate(-50%);
+  border-radius: 50%;
+  height: 80%;
+  width: 55%;
+  background: #e08858;
+  z-index: 1;
+  clip-path: polygon(0% 0%, 150% 0%, 150% 40%, 0% 40%);
+}
+.tepig-hand {
+  width: 8%;
+  height: 10%;
+  transform: rotate(-55deg);
+  border-radius: 0 80px;
+  background: #34282b;
+  position: absolute;
+  bottom: -4%;
+  left: 30%;
+  z-index: 3;
+}
+.tepig-hand + .tepig-hand {
+  left: auto;
+  right: 30%;
+}

@@ -1,0 +1,274 @@
+.oshawott-head {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%);
+  width: 78%;
+  height: 65%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #f7f3f0 65%, #080707 120%);
+}
+.oshawott-ear.hero {
+  width: 0;
+  height: 0;
+  border-left: 3vmin solid transparent;
+  border-right: 3vmin solid transparent;
+  border-bottom: 3vmin solid #6b86ae;
+  border-radius: 50%;
+  position: absolute;
+  left: -10%;
+  top: 3%;
+  transform: rotate(-45deg);
+}
+.oshawott-ear.hero + .oshawott-ear.hero {
+  transform: rotate(45deg) scaleX(-1);
+  left: auto;
+  right: -10%;
+}
+.oshawott-ear.css {
+  width: 0;
+  height: 0;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid #6b86ae;
+  border-radius: 50%;
+  position: absolute;
+  left: -8%;
+  top: 7%;
+  transform: rotate(-50deg);
+}
+.oshawott-ear.css + .oshawott-ear.css {
+  transform: rotate(50deg) scaleX(-1);
+  left: auto;
+  right: -8%;
+}
+
+.oshawott-eye {
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  background: #080707;
+  height: 26%;
+  width: 15%;
+  border-radius: 50%;
+  transform: rotate(5deg);
+  overflow: hidden;
+}
+
+.oshawott-eye + .oshawott-eye {
+  left: auto;
+  right: 15%;
+  transform: rotate(-5deg) scaleX(-1);
+}
+
+.oshawott-pupil {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  height: 40%;
+  border-radius: 50%;
+  background: #f7f3f0;
+}
+
+.oshawott-pupil-glare {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  height: 40%;
+  border-radius: 50%;
+  background: #f7f3f046;
+  box-shadow: 0 -0.2vmin 1.2vmin 0.1vmin #f7f3f084;
+}
+
+.oshawott-freckles {
+  position: absolute;
+  width: 1.5%;
+  height: 2%;
+  border-radius: 50%;
+  background: #080707;
+}
+.left00 {
+  bottom: 32%;
+  left: 15%;
+}
+.left01 {
+  bottom: 32%;
+  left: 25%;
+}
+.left02 {
+  bottom: 24%;
+  left: 20%;
+}
+.right00 {
+  bottom: 32%;
+  right: 15%;
+}
+.right01 {
+  bottom: 32%;
+  right: 25%;
+}
+.right02 {
+  bottom: 24%;
+  right: 20%;
+}
+
+.oshawott-nose {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%);
+  width: 27%;
+  height: 25%;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 0px -5px, #c28138, #502c09);
+}
+
+.oshawott-nose-glare {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 35%;
+  border-radius: 50%;
+  background: #f7f3f023;
+  box-shadow: 0 -0.2vmin 1.2vmin 0.2vmin #f7f3f03f;
+}
+
+.oshawott-mouth {
+  width: 35%;
+  height: 20%;
+  background-color: #8c3331;
+  border-radius: 0 0 3rem 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 10%;
+  overflow: hidden;
+}
+
+.oshawott-tonuge {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #ca6e6d;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.oshawott-teeth {
+  z-index: 2;
+  position: absolute;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-top: 0.8vmin solid #f7f3f0;
+  border-left: 0.5vmin solid transparent;
+  border-right: 0.5vmin solid transparent;
+}
+.oshawott-teeth + .oshawott-teeth {
+  left: auto;
+  right: 10%;
+}
+
+.oshawott-body {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%);
+  width: 55%;
+  height: 60%;
+  border-radius: 30%;
+  background: linear-gradient(to right bottom, #42c7c1 40%, #23898f 170%);
+  box-shadow: 0 -0.1vmin 1.2vmin 0.1vmin #1a1b1a46;
+}
+
+.oshawott-body-decor {
+  width: 30%;
+  height: 28%;
+  border-radius: 50%;
+  position: absolute;
+}
+.decor00 {
+  background: linear-gradient(to top, #42c7c1 40%, #87efe8 100%);
+  top: -12%;
+  left: -8%;
+}
+.decor01 {
+  background: linear-gradient(to left top, #42c7c1 40%, #87efe8 90%);
+  width: 28%;
+  height: 24%;
+  top: -10%;
+  left: 15%;
+}
+.decor02 {
+  background: linear-gradient(to left top, #42c7c1 40%, #87efe8 90%);
+  width: 28%;
+  height: 24%;
+  top: -10%;
+  right: 15%;
+}
+.decor03 {
+  background: linear-gradient(to right bottom, #42c7c1 40%, #23898f 170%);
+  top: -12%;
+  right: -8%;
+}
+
+.oshawott-arm {
+  z-index: 0;
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  border-radius: 100% / 130% 130% 80% 80%;
+  background: #f7f3f0;
+}
+.left-arm {
+  background: linear-gradient(to left bottom, #f7f3f0 40%, #c0cbde 90%);
+  bottom: -3%;
+  left: 12%;
+  transform: rotate(-60deg);
+}
+.right-arm {
+  background: linear-gradient(to right bottom, #f7f3f0 40%, #c0cbde 90%);
+  bottom: -3%;
+  right: 12%;
+  transform: rotate(60deg);
+}
+
+.oshawott-clam {
+  z-index: 3;
+  width: 25%;
+  height: 15%;
+  border-radius: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: -8%;
+  background: #f6e5a4;
+}
+
+.oshawott-clam::before {
+  content: "";
+  position: absolute;
+  left: 27%;
+  width: 3%;
+  height: 100%;
+  background: #42c7c1;
+  transform: rotate(-10deg);
+}
+.oshawott-clam::after {
+  content: "";
+  position: absolute;
+  right: 27%;
+  width: 3%;
+  height: 100%;
+  background: #42c7c1;
+  transform: rotate(10deg);
+}

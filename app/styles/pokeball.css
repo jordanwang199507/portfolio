@@ -1,0 +1,333 @@
+.ball {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#d31f26 45%, #222222 45% 55%, #ffffff 55%);
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+}
+
+.great {
+  background: linear-gradient(#0c92db 45%, #222222 45% 55%, #ffffff 55%);
+}
+.great .decor {
+  position: absolute;
+  left: 11%;
+  top: 10%;
+  width: 20%;
+  height: 25%;
+  background: #fe677d;
+  transform: rotate(-45deg);
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+}
+
+.great .decor + .decor {
+  right: 11%;
+  left: auto;
+  transform: scaleX(-1) rotate(-45deg);
+}
+.ball.great::before {
+  background: #ffca4f;
+}
+
+.ball.great::after {
+  background: #ffca4f;
+}
+
+.ultra {
+  overflow: hidden;
+  background: linear-gradient(#414141 45%, #222222 45% 55%, #ffffff 55%);
+}
+.ultra .decor {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 10%;
+  height: 45%;
+  border: 0.5rem solid #f1dd75;
+}
+
+.ultra .decor-top {
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%);
+  overflow: hidden;
+}
+.ultra .decor-top:before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  border: 30px solid #f1dd75;
+  left: 50%;
+  top: -20%;
+  transform: translate(-50%);
+}
+.ultra .decor + .decor {
+  right: 15%;
+  left: auto;
+  transform: scaleX(-1);
+}
+
+.master {
+  background: linear-gradient(#6c639c 45%, #222222 45% 55%, #ffffff 55%);
+}
+
+.master .decor {
+  width: 40%;
+  height: 28%;
+  position: absolute;
+  left: -10%;
+  top: -5%;
+  transform: rotate(-40deg);
+  overflow: hidden;
+}
+.master .decor:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 30%;
+  border-radius: 50%;
+  background: #c7578d;
+  left: 45%;
+  top: 30%;
+  z-index: 4;
+}
+.master .decor + .decor {
+  right: -10%;
+  left: auto;
+  transform: scaleX(-1) rotate(-40deg);
+}
+.master .decor .decor-top {
+  width: 100%;
+  height: 3vmin;
+  overflow: hidden;
+  position: relative;
+}
+.master .decor .decor-top:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: translate(-50%);
+  left: 50%;
+  top: 20%;
+  height: 3.8vmin;
+  border-radius: 50%;
+  background: #a72e69;
+}
+.master .decor .decor-bottom {
+  border-radius: 0 0 50% 50%;
+  height: 30%;
+  width: 100%;
+  position: relative;
+  top: -3%;
+  background-color: #a72e69;
+}
+.master .letter {
+  width: 2vmin;
+  height: 2vmin;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+}
+.master .letter .letter-left {
+  position: absolute;
+  transform: rotate(15deg);
+  border-radius: 5px;
+  width: 0.4vmin;
+  height: 100%;
+  background: #fff;
+}
+.master .letter .letter-left + .letter-left {
+  transform: scaleX(-1) rotate(15deg) translate(-50%, -50%);
+  left: 0.5vmin;
+  top: 50%;
+}
+.master .letter .letter-right {
+  position: absolute;
+  border-radius: 5px;
+  width: 0.4vmin;
+  height: 100%;
+  background: #fff;
+  transform: scaleX(-1) rotate(-15deg) translate(-50%, -50%);
+  left: 0.6vmin;
+  top: 45%;
+}
+.master .letter .letter-right + .letter-right {
+  transform: scaleX(-1) rotate(15deg) translate(-50%, -50%);
+  right: 0.1vmin;
+  left: auto;
+  top: 50%;
+}
+.master::before {
+  background: #ffca4f !important;
+}
+.master::after {
+  background: #ffca4f !important;
+}
+
+.ball::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -3%;
+  width: 0.8vmin;
+  height: 10%;
+  background: #222222;
+  align-self: center;
+}
+.ball::after {
+  content: "";
+  position: absolute;
+  right: -3%;
+  display: block;
+  width: 0.8vmin;
+  height: 10%;
+  background: #222222;
+  align-self: center;
+}
+
+.pokeball {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.pokeball-top {
+  width: 100%;
+  height: 50%;
+  border-radius: 10vmin 10vmin 0 0;
+  background: #4c714e;
+  overflow: hidden;
+  position: relative;
+}
+.pokeball-bottom {
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 10vmin 10vmin;
+  background-color: #ffffff;
+}
+.pokeball-center {
+  width: 100%;
+  height: 10%;
+  background: #222222;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.pokeball-center:before {
+  content: "";
+  position: absolute;
+  left: -1%;
+  width: 0.4vmin;
+  height: 100%;
+  background: #ffca4f;
+}
+.pokeball-center:after {
+  content: "";
+  position: absolute;
+  right: -1%;
+  width: 0.4vmin;
+  height: 100%;
+  background: #ffca4f;
+}
+
+.safari .pokeball-top .decor {
+  position: absolute;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: -20%;
+  width: 100%;
+  height: 100%;
+  border: 1vmin solid #e19764;
+  border-radius: 50%;
+}
+.safari .pokeball-top .decor + .decor {
+  width: 80%;
+  height: 80%;
+  top: -60%;
+}
+
+.timer {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.timer .pokeball-top {
+  background: #ffffff;
+  overflow: visible;
+}
+.timer .decor {
+  position: absolute;
+  transform: rotate(55deg);
+  top: 15%;
+  left: 5%;
+  width: 105%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -2vmin 0vmin #d94c48;
+}
+.timer .decor + .decor {
+  transform: scaleX(-1) rotate(55deg);
+  right: 5%;
+  left: auto;
+}
+.timer .pokeball-top .timer-decor {
+  position: absolute;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  top: -60%;
+  width: 100%;
+  height: 100%;
+  background: #67696f;
+  border-radius: 50%;
+  z-index: 10;
+}
+.timer-topArrow {
+  position: absolute;
+  width: 20%;
+  height: 30%;
+  background: #d94c48;
+  top: -2%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.center {
+  height: 3vmin;
+  width: 3vmin;
+  min-height: 25px;
+  min-width: 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.5rem solid #222222;
+}
+
+.park {
+  background: linear-gradient(#f2cb3f 43%, #306ab6 43% 58%, #ffffff 58%);
+}
+.park::before {
+  width: 0.5vmin;
+}
+.park::after {
+  width: 0.5vmin;
+}
+.park-center {
+  height: 40%;
+  width: 40%;
+  border-radius: 50%;
+  background: #eb7e24;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.5vmin solid #306ab6;
+}
