@@ -1,9 +1,20 @@
-import React from "react";
+"use client";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { OnePieceJolly, PokeBallPark } from "../_components/design";
 
 const Introduction = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
   return (
-    <section id="introduction" className="pt-36 pb-40 relative overflow-hidden">
+    <motion.section
+      id="introduction"
+      className="pt-36 pb-40 relative overflow-hidden"
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="global-container ">
         <OnePieceJolly position="background" />
         <div className="max-w-3xl ml-[15%] max-xl:ml-[10%] max-lg:mx-auto relative z-10">
@@ -64,7 +75,7 @@ const Introduction = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

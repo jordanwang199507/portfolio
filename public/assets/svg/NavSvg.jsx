@@ -17,7 +17,7 @@ const MenuSvg = ({ openNavigation }) => {
         className="transition-transform duration-300 ease-in-out origin-center group-hover:fill-[#FFCA4F]"
         transform={
           openNavigation
-            ? "translate(-15, 7) rotate(45 10 10)" // move down into center + rotate
+            ? "translate(-13, 7) rotate(45 10 10)" // move down into center + rotate
             : "rotate(0 10 10)" // reset
         }
       />
@@ -33,7 +33,7 @@ const MenuSvg = ({ openNavigation }) => {
         className="transition-transform duration-300 ease-in-out origin-center group-hover:fill-[#FFCA4F]"
         transform={
           openNavigation
-            ? "translate(-1, -12) rotate(-45 10 10)" // move up into center + rotate
+            ? "translate(1, -13) rotate(-45 10 10)" // move up into center + rotate
             : "rotate(0 10 10)"
         }
       />

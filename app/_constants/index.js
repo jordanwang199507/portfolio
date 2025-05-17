@@ -1,3 +1,4 @@
+export { info } from "@/app/_constants/info";
 export { navigation } from "@/app/_constants/navigation";
 export { careers } from "@/app/_constants/careers";
 export { projects } from "@/app/_constants/projects";

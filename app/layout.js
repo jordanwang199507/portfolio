@@ -37,6 +37,10 @@ const clashBold = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/svg/tab-icon.svg" sizes="any" />
+        <title>Jordan's Portfolio</title>
+      </head>
       <body
         className={`${redHat.variable} ${nippoExtraLight.variable} ${nippoLight.variable} ${nippoRegular.variable}  ${nippoMedium.variable} ${nippoBold.variable} ${clashBold.variable}`}
       >

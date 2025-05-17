@@ -18,12 +18,12 @@ const PageLoader = ({ children }) => {
     return (
       <div className="fixed inset-0 z-50 flex flex-col gap-10 items-center justify-center bg-background ">
         <OnePieceJolly position={"pageload"} />
-        <h1 className="text-4xl text-tertiary font-clash-bold tracking-wide font-bold animate-pulse">
+        <h1 className="text-4xl max-md:text-2xl text-tertiary font-clash-bold tracking-wide font-bold animate-pulse">
           <Typewriter
-            words={["Loading Portfolio..."]}
+            words={["Loading Portfolio . . "]}
             typeSpeed={100}
             cursor
-            cursorStyle="_"
+            cursorStyle="."
           />
         </h1>
       </div>

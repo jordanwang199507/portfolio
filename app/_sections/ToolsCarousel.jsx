@@ -1,15 +1,30 @@
+"use client";
 import svg from "@/public/assets";
-import React from "react";
+import { useRef, useState, useEffect } from "react";
+import { useInView } from "framer-motion";
 import { F1 } from "../_components/design";
 
 const ToolsCarousel = () => {
+  const f1Ref = useRef(null);
+  const isInView = useInView(f1Ref, { once: true, margin: "-100px 0px" });
+  const [startF1, setStartF1] = useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      setStartF1(true);
+    }
+  }, [isInView]);
   return (
     <section className="pt-20 flex gap-4 flex-col relative h-fit">
-      <div className=" w-full h-32 relative overflow-hidden">
-        <F1 team="redbull" position={"1"} delay="0s" />
-        <F1 team="mclaren" position={"2"} delay="1s" />
-        <F1 team="ferrari" position={"3"} delay="1.5s" />
-        <F1 team="sauber" position={"4"} delay="3s" />
+      <div ref={f1Ref} className="w-full h-32 relative overflow-hidden">
+        {startF1 && (
+          <>
+            <F1 team="redbull" position={"1"} delay="0s" />
+            <F1 team="mclaren" position={"2"} delay="1s" />
+            <F1 team="ferrari" position={"3"} delay="1.5s" />
+            <F1 team="sauber" position={"4"} delay="3s" />
+          </>
+        )}
       </div>
       <div className="carousel">
         <div className="carousel__tools__inner carousel__reverse">

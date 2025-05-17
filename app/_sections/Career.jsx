@@ -1,17 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { careers } from "../_constants";
 import { PokeBallPark } from "../_components/design";
 
 const Career = () => {
-  const [selectedCareerId, setSelectedCareerId] = useState("1");
-  // const [selectedCareerId, setSelectedCareerId] = useState(careers.length - 1);
+  const [selectedCareerId, setSelectedCareerId] = useState(
+    careers[careers.length - 1].id
+  );
   const selectedCareer = careers.find(
     (career) => career.id === selectedCareerId
   );
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
+
   return (
-    <section id="career" className="relative">
+    <motion.section
+      id="career"
+      className="relative"
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="global-container">
         <div className="max-w-4xl mx-auto">
           <div className="flex w-full items-center gap-4 max-sm:gap-2">
@@ -76,7 +88,7 @@ const Career = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

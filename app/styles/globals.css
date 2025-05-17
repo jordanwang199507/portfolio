@@ -60,7 +60,9 @@
     @apply max-w-[88.75rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[100rem];
   }
   .marquee {
-    @apply w-full mx-auto border-[6px] border-background pt-4 pb-3 max-sm:pt-3 max-sm:pb-2 rounded-lg relative -top-2 bg-foreground;
+    @apply w-0 opacity-0 mx-auto border-[6px] border-background pt-4 pb-3 max-sm:pt-3 max-sm:pb-2 rounded-lg relative -top-2 bg-foreground;
+    animation: borderStretchIn 1.2s ease-out 6.5s forwards;
+    transform-origin: left;
   }
 
   .carousel {
@@ -71,7 +73,7 @@
     @apply relative mx-auto w-[38vmin] h-[38vmin] border-[1.5vmin] rounded-full border-background;
   }
   .canvas__pageload {
-    @apply h-[420px] w-[420px] relative;
+    @apply h-[420px] w-[420px] max-md:scale-65 relative;
   }
   .canvas__css {
     @apply relative h-[20vmin] w-[20vmin] min-h-[240px] max-lg:scale-85 max-md:scale-75 min-w-[240px] overflow-hidden;
@@ -118,28 +120,10 @@
   }
 
   .canvas__pokeball {
-    @apply z-0 h-[7vmin] w-[7vmin] min-h-[65px] min-w-[65px] max-md:scale-90 border-0 rounded-none place-items-center items-center absolute rotate-[-15deg] opacity-85;
+    @apply z-0 h-[6vmin] w-[6vmin] min-h-[45px] min-w-[45px] max-md:scale-90 border-0 rounded-none place-items-center items-center absolute rotate-[-15deg] opacity-85;
   }
   .pokeball__top {
     @apply max-md:opacity-25;
-  }
-  .pokeball__regular {
-    @apply bottom-[25%] 2xl:left-[8%];
-  }
-  .pokeball__great {
-    @apply h-[7.5vmin] w-[7.5vmin] top-[25vmin] left-[2vmin] rotate-[10deg] max-md:scale-85;
-  }
-  .pokeball__master {
-    @apply left-[25%] top-[15%] scale-75 max-md:bottom-[25%] max-md:top-auto max-md:left-[10%];
-  }
-  .pokeball__ultra {
-    @apply right-[25%] bottom-[15%] rotate-[15deg] scale-90  max-lg:right-[10%] max-md:right-[5%];
-  }
-  .pokeball__safari {
-    @apply right-[5%] bottom-[35%] rotate-[25deg];
-  }
-  .pokeball__timer {
-    @apply right-[20%] top-[30%] max-md:right-[20%];
   }
 
   .icon__pokeball {
@@ -180,6 +164,17 @@
 }
 
 @layer utilities {
+  @keyframes borderStretchIn {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+    100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0%);
@@ -209,7 +204,7 @@
 
   .carousel__inner {
     @apply flex gap-20 w-fit;
-    animation: marquee 22s linear infinite;
+    animation: marquee 22s linear 6.7s infinite;
   }
 
   .carousel__tools__inner {

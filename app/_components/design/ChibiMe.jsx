@@ -1,10 +1,55 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import "../../styles/chibime.css";
+
+const canvasVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const characterVariants = {
+  hidden: { opacity: 0, y: 100 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      y: {
+        delay: 0.8,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+      opacity: {
+        delay: 1,
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  },
+};
 
 const ChibiMe = ({ className }) => {
   return (
-    <div className={`canvas portrait ${className}`}>
-      <div className="character">
+    <motion.div
+      className={`canvas portrait ${className}`}
+      variants={canvasVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div
+        className="character"
+        variants={characterVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="shoulders">
           <div className="pocket"></div>
         </div>
@@ -48,8 +93,8 @@ const ChibiMe = ({ className }) => {
         <div className="shirt-neck"></div>
         <div className="shirt-neck-second"></div>
         <div className="shirt-neck-second"></div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

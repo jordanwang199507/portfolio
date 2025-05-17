@@ -298,8 +298,8 @@
 }
 
 .center {
-  height: 3vmin;
-  width: 3vmin;
+  height: 2.5vmin;
+  width: 2.5vmin;
   min-height: 25px;
   min-width: 25px;
   border-radius: 50%;
@@ -308,7 +308,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 0.5rem solid #222222;
+  border: 0.5em solid #222222;
 }
 
 .park {
