@@ -10,7 +10,7 @@ const redHat = Red_Hat_Display({
 });
 
 const nippoExtraLight = localFont({
-  src: "../public/assets/fonts/Nippo-ExtraLight.otf",
+  src: "../public/assets/fonts/Nippo-Extralight.otf",
   variable: "--font-nippo-extraLight",
 });
 const nippoLight = localFont({
