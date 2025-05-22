@@ -2,8 +2,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default (dark mode) */
+  --background: #212121;
+  --background-transparent: #212121b8;
+  --background-description: #0f0c05;
+  --background-csscard-tab: #373e43;
+  --background-csscard-tab-hover: #2b30377a;
+  --background-csscard: #2b3037;
+  --background-project: #000000ae;
+  --nav-background: #141209;
+  --foreground: #ffca4f;
+  --font-color: #f2e8d7;
+  --career: #f2e8d718;
+  --career-secondary: #f2e8d7a6;
+  --font-secondary: #d4be8a;
+  --font-tertiary: #f3e1c3;
+  --color-info: #888888;
 }
 
 @theme inline {
@@ -32,7 +46,7 @@
 }
 
 /* laptop currently set to dark mode, will use media defined below */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #212121;
     --background-transparent: #212121b8;
