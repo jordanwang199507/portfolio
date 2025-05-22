@@ -50,7 +50,7 @@ const ProjectItem = ({ project, index }) => {
         <h3 className="font-red-hat font-black text-3xl max-md:text-2xl mt-2 z-[3] relative">
           {project.github ? (
             <a
-              href={project.github}
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-foreground transition-colors duration-200"
