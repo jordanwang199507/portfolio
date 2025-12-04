@@ -57,6 +57,7 @@ const Career = () => {
                 ))}
             </div>
             {/* display more detail view of the career (based on what is selected on the left), info display will be career.position, etc */}
+            {/* detail view */}
             <div className="flex-grow pl-7 max-lg:pl-4 max-md:pl-0">
               <div className="flex gap-4 max-lg:gap-2 items-center max-sm:flex-col max-sm:items-start max-sm:gap-0">
                 <h3 className="font-red-hat font-black text-xl max-lg:text-lg leading-16 max-sm:leading-12">
@@ -72,18 +73,54 @@ const Career = () => {
                 </div>
                 <div className="text-font">{selectedCareer.companyStatus}</div>
               </div>
-              <ul className="flex gap-6 flex-col mt-6">
-                {selectedCareer.highlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="flex justify-start">
-                      <PokeBallPark />
-                    </div>
-                    <p className="font-red-hat font-light text-base max-md:text-sm  text-secondary leading-8">
-                      {highlight}
-                    </p>
-                  </li>
-                ))}
-              </ul>
+
+              {/* titles + highlight groups */}
+              <div className="mt-6 flex flex-col gap-4">
+                {/* Title above main highlights (if present) */}
+                {selectedCareer.highlights_title_1 && (
+                  <h4 className="font-red-hat font-semibold text-base max-md:text-sm text-foreground">
+                    {selectedCareer.highlights_title_1}
+                  </h4>
+                )}
+
+                {/* Main highlights */}
+                {selectedCareer.highlights?.length > 0 && (
+                  <ul className="flex gap-4 flex-col">
+                    {selectedCareer.highlights.map((highlight, idx) => (
+                      <li key={`h1-${idx}`} className="flex items-start gap-3">
+                        <div className="flex justify-start">
+                          <PokeBallPark />
+                        </div>
+                        <p className="font-red-hat font-light text-base max-md:text-sm text-secondary leading-8">
+                          {highlight}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Second title + second highlight list, if available */}
+                {selectedCareer.highlights_title_2 && (
+                  <h4 className="font-red-hat font-semibold text-base max-md:text-sm text-foreground mt-2">
+                    {selectedCareer.highlights_title_2}
+                  </h4>
+                )}
+
+                {selectedCareer.highlights_2?.length > 0 && (
+                  <ul className="flex gap-4 flex-col">
+                    {selectedCareer.highlights_2.map((highlight, idx) => (
+                      <li key={`h2-${idx}`} className="flex items-start gap-3">
+                        <div className="flex justify-start">
+                          <PokeBallPark />
+                        </div>
+                        <p className="font-red-hat font-light text-base max-md:text-sm text-secondary leading-8">
+                          {highlight}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </div>
         </div>

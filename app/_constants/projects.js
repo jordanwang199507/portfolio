@@ -1,14 +1,13 @@
 export const projects = [
   {
     id: "0",
-    name: "Angry Bird",
-    type: "Side Project",
+    name: "Protocol",
+    type: "Freelance Project",
     description:
-      "Crafted a playful Angry Birds scene using pure <span class='text-[#ffca4f]'>CSS</span> for character design and styling, enhanced with simple animations. Integrated <span class='text-[#ffca4f]'>GSAP</span> to animate and move scene elements, creating a dynamic and interactive visual experience.",
-    tools: ["CSS", "Next.JS", "Vercel", "GSAP"],
-    image: "/assets/images/thumbnail-angrybird.png",
-    github: "https://github.com/jordanwang199507/angryBirds",
-    url: "https://angry-birds-two.vercel.app/",
+      "Directed and managed the front-end development with modern, responsive <span class='text-[#ffca4f]'>Next. js</span> web app and  <span class='text-[#ffca4f]'>Sanity CMS</span> with a <span class='text-[#ffca4f]'>Django</span> based backend for fast data integration and high performance.",
+    tools: ["TailwindCSS", "Next.JS", "Sanity", "Django"],
+    image: "/assets/images/thumbnail-protocol.png",
+    url: "https://protocol.devyuga.com/",
   },
   {
     id: "1",

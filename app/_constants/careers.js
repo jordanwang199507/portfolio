@@ -28,15 +28,24 @@ export const careers = [
   },
   {
     id: "2",
-    company: "Protocol (Division of Aelen)",
-    tag: "@Protocol",
-    position: "Lead Front-end Developer",
-    startDate: "March 2025",
+    company: "Freelancer Contractor",
+    tag: "@Freelancer",
+    position: "Web Developer Contractor",
+    startDate: "July 2024",
     endDate: "Present",
+    highlights_title_1:
+      "Protocol (https:protocol.devyuga.com) -  Front-End Contractor",
     highlights: [
       "Directed and managed the front-end development with modern, responsive Next. js web app and Sanity CMS with a Django based backend for fast data integration and high performance.",
       "Built intuitive UI components and page layouts to bring product requirements and wireframes into elegantly simple user interfaces with React, Tailwind, and component-driven development.",
       "Worked closely with backend developers to specify APIs, resolve integration issues, and deliver full-stack features with agile methodologies and proper version-control practices.",
+    ],
+    highlights_title_2:
+      "Quality Coffee Systems (qualitycoffeesystems.ca) - SEO & Performance Consultant",
+    highlights_2: [
+      "Drove measurable gains across Core Web Vitals, PageSpeed, and organic traffic",
+      "Search visibility up: Clicks +15.9% (3.52K→4.08K); Impressions +33% (176K→234K); avg position 23.1→12.",
+      "Organic sessions +40.5%, engaged sessions +45.3%, engagement rate +2.34 pp; Active users +17.65%.",
     ],
   },
 ];
