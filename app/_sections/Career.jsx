@@ -3,11 +3,15 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { careers } from "../_constants";
 import { PokeBallPark } from "../_components/design";
+import { useLanguage } from "../_context/LanguageContext";
 
 const Career = () => {
+  const { lang } = useLanguage();
+
   const [selectedCareerId, setSelectedCareerId] = useState(
     careers[careers.length - 1].id
   );
+
   const selectedCareer = careers.find(
     (career) => career.id === selectedCareerId
   );
@@ -31,7 +35,7 @@ const Career = () => {
               02.
             </h2>
             <h2 className="font-red-hat font-bold text-[32px] max-md:text-[28px] max-sm:text-2xl  text-nowrap">
-              Career Overview
+              {lang === "zh-TW" ? "工作經驗" : "Career Overview"}
             </h2>
             <hr className="h-[1px] bg-font w-full ml-4 opacity-50" />
           </div>
@@ -61,7 +65,7 @@ const Career = () => {
             <div className="flex-grow pl-7 max-lg:pl-4 max-md:pl-0">
               <div className="flex gap-4 max-lg:gap-2 items-center max-sm:flex-col max-sm:items-start max-sm:gap-0">
                 <h3 className="font-red-hat font-black text-xl max-lg:text-lg leading-16 max-sm:leading-12">
-                  {selectedCareer.position}
+                  {selectedCareer.position?.[lang] ?? selectedCareer.position}
                 </h3>
                 <div className="font-red-hat font-black text-foreground text-xl max-lg:text-lg ">
                   {selectedCareer.tag}
@@ -79,7 +83,8 @@ const Career = () => {
                 {/* Title above main highlights (if present) */}
                 {selectedCareer.highlights_title_1 && (
                   <h4 className="font-red-hat font-semibold text-base max-md:text-sm text-foreground">
-                    {selectedCareer.highlights_title_1}
+                    {selectedCareer.highlights_title_1?.[lang] ??
+                      selectedCareer.highlights_title_1}
                   </h4>
                 )}
 
@@ -92,7 +97,7 @@ const Career = () => {
                           <PokeBallPark />
                         </div>
                         <p className="font-red-hat font-light text-base max-md:text-sm text-secondary leading-8">
-                          {highlight}
+                          {highlight?.[lang] ?? highlight}
                         </p>
                       </li>
                     ))}
@@ -102,7 +107,8 @@ const Career = () => {
                 {/* Second title + second highlight list, if available */}
                 {selectedCareer.highlights_title_2 && (
                   <h4 className="font-red-hat font-semibold text-base max-md:text-sm text-foreground mt-2">
-                    {selectedCareer.highlights_title_2}
+                    {selectedCareer.highlights_title_2?.[lang] ??
+                      selectedCareer.highlights_title_2}
                   </h4>
                 )}
 
@@ -114,7 +120,7 @@ const Career = () => {
                           <PokeBallPark />
                         </div>
                         <p className="font-red-hat font-light text-base max-md:text-sm text-secondary leading-8">
-                          {highlight}
+                          {highlight?.[lang] ?? highlight}
                         </p>
                       </li>
                     ))}

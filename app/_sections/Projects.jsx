@@ -3,8 +3,10 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { projects } from "../_constants";
 import { ProjectItem } from "../_components";
+import { useLanguage } from "../_context/LanguageContext";
 
 const Projects = () => {
+  const { lang } = useLanguage();
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
 
@@ -23,7 +25,7 @@ const Projects = () => {
               03.
             </h2>
             <h2 className="font-red-hat font-bold text-[32px] max-md:text-[28px] max-sm:text-2xl text-nowrap">
-              Things I've Built
+              {lang === "zh-TW" ? "參與專案" : "Things I've Built"}
             </h2>
             <hr className="h-[1px] bg-font w-full ml-4 opacity-50" />
           </motion.div>

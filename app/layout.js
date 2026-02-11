@@ -2,6 +2,7 @@ import { Red_Hat_Display, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import { NavigationProvider } from "./_context/NavigationContext";
+import { LanguageProvider } from "./_context/LanguageContext";
 import { BodyScrollManager } from "./_components";
 
 const redHat = Red_Hat_Display({
@@ -44,10 +45,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${redHat.variable} ${nippoExtraLight.variable} ${nippoLight.variable} ${nippoRegular.variable}  ${nippoMedium.variable} ${nippoBold.variable} ${clashBold.variable}`}
       >
+        <LanguageProvider>
         <NavigationProvider>
           <BodyScrollManager />
           {children}
         </NavigationProvider>
+      </LanguageProvider>
       </body>
     </html>
   );

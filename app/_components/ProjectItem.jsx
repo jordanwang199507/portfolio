@@ -4,9 +4,16 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import GitHubSvg from "@/public/assets/svg/GitHubSvg";
 import LinkSvg from "@/public/assets/svg/LinkSvg";
+import { useLanguage } from "../_context/LanguageContext";
+
 const ProjectItem = ({ project, index }) => {
+  const { lang } = useLanguage();
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const projectType = project.type?.[lang] ?? project.type;
+  const projectDescription = project.description?.[lang] ?? project.description;
 
   return (
     <motion.li
@@ -14,7 +21,7 @@ const ProjectItem = ({ project, index }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-      className=" relative grid gap-[10px] grid-cols-12 items-center h-[380px] max-md:h-auto"
+      className="relative grid gap-[10px] grid-cols-12 items-center h-[380px] max-md:h-auto"
     >
       {/* image */}
       <a
@@ -27,7 +34,7 @@ const ProjectItem = ({ project, index }) => {
             : "col-start-6 col-end-[-1] max-md:col-start-1"
         }`}
       >
-        <div className="image-cover relative w-full h-full max-lg:h-0 p-40 max-md:h-full max-md:p-0 mix-blend-darken contrast-100 brightness-100 max-md:opacity-30 ">
+        <div className="image-cover relative w-full h-full max-lg:h-0 p-40 max-md:h-full max-md:p-0 mix-blend-darken contrast-100 brightness-100 max-md:opacity-30">
           <Image
             src={project.image}
             alt={`${project.name} thumbnail`}
@@ -36,6 +43,7 @@ const ProjectItem = ({ project, index }) => {
           />
         </div>
       </a>
+
       {/* content */}
       <div
         className={`relative row-start-1 row-end-[-1] max-md:z-10 max-md:h-full max-md:flex max-md:flex-col max-md:justify-center max-md:rounded-lg max-md:p-8 transition-all duration-300 ${
@@ -45,8 +53,9 @@ const ProjectItem = ({ project, index }) => {
         }`}
       >
         <p className="text-sm text-foreground font-nippo-light">
-          {project.type}
+          {projectType}
         </p>
+
         <h3 className="font-red-hat font-black text-3xl max-md:text-2xl mt-2 z-[3] relative">
           {project.github ? (
             <a
@@ -61,9 +70,11 @@ const ProjectItem = ({ project, index }) => {
             project.name
           )}
         </h3>
+
         <div className="z-[3] min-h-44 relative p-10 max-lg:px-7 max-lg:py-8 bg-background-description max-md:bg-transparent max-md:p-0 max-md:min-h-0 rounded-lg mt-6 leading-8 font-nippo-regular text-sm">
-          <p dangerouslySetInnerHTML={{ __html: project.description }} />
+          <p dangerouslySetInnerHTML={{ __html: projectDescription }} />
         </div>
+
         <div
           className={`z-[3] relative flex gap-4 mt-4 max-md:justify-start max-md:mt-8 max-md:flex-wrap ${
             index % 2 !== 1 ? "justify-end" : "justify-start"
@@ -75,8 +86,9 @@ const ProjectItem = ({ project, index }) => {
             </p>
           ))}
         </div>
+
         <div
-          className={`flex gap-4 items-center mt-4 max-md:justify-start ${
+          className={`flex gap-4 mt-5 z-[3] relative ${
             index % 2 !== 1 ? "justify-end" : "justify-start"
           }`}
         >
@@ -85,21 +97,20 @@ const ProjectItem = ({ project, index }) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-foreground transition-colors duration-200"
+              className="hover:opacity-80 transition-opacity duration-200"
             >
               <GitHubSvg />
             </a>
           )}
-          {project.url && (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-foreground transition-colors duration-200"
-            >
-              <LinkSvg />
-            </a>
-          )}
+
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity duration-200"
+          >
+            <LinkSvg />
+          </a>
         </div>
       </div>
     </motion.li>

@@ -5,6 +5,7 @@ import { navigation } from "../_constants";
 import svg from "@/public/assets/";
 import { PokeBallPark } from "../_components/design";
 import { useNavigation } from "../_context/NavigationContext";
+import { useLanguage } from "../_context/LanguageContext";
 import MenuSvg from "@/public/assets/svg/NavSvg";
 
 const logoVariants = {
@@ -45,6 +46,7 @@ const navItemVariants = {
 };
 
 const Header = () => {
+  const { lang, toggleLanguage } = useLanguage();
   const { openNavigation, setOpenNavigation } = useNavigation();
   const [openSideNav, setOpenSideNav] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
@@ -160,7 +162,7 @@ const Header = () => {
                 <span className="font-nippo-light text-foreground mr-2">
                   {item.id}.
                 </span>
-                {item.title}
+                {item.title?.[lang] ?? item.title}
               </motion.a>
             ))}
 
@@ -175,8 +177,32 @@ const Header = () => {
                 rel="noopener noreferrer"
               >
                 <PokeBallPark location={"nav"} />
-                Resume
+                {lang === "zh-TW" ? "履歷表" : "Resume"}
               </a>
+              <div className="absolute inset-0 z-10 border border-foreground bg-foreground rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            </motion.div>
+
+            <motion.div
+              variants={navItemVariants}
+              className="group max-lg:mt-4 h-[45px] relative ml-3 max-lg:ml-0"
+            >
+              <button
+                type="button"
+                onClick={() => {
+                  toggleLanguage();
+                  if (openSideNav) {
+                    setOpenSideNav(false);
+                    setOpenNavigation(false);
+                  }
+                }}
+                className="relative flex items-center bg-background justify-center z-50 border-2 border-foreground px-4 rounded-lg h-[45px] w-fit transition-transform duration-200 group-hover:text-foreground group-hover:-translate-y-[3px] group-hover:-translate-x-1 group-active:-translate-y-[1px] group-active:-translate-x-0.5 group-active:inset-ring-2 group-active:inset-ring-foreground cursor-pointer text-sm"
+                aria-label="Toggle language"
+              >
+                <span className="mr-2">{lang === "zh-TW" ? "🇹🇼" : "🇨🇦"}</span>
+                <span className="font-red-hat font-medium">
+                  {lang === "zh-TW" ? "繁中" : "EN"}
+                </span>
+              </button>
               <div className="absolute inset-0 z-10 border border-foreground bg-foreground rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </motion.div>
           </motion.div>

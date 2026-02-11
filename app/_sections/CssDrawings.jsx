@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CssCard } from "../_components";
 import { cssDrawings } from "../_constants";
+import { useLanguage } from "../_context/LanguageContext";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -18,6 +19,8 @@ const cardVariants = {
 };
 
 const CssDrawings = () => {
+  const { lang } = useLanguage();
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
 
@@ -37,7 +40,7 @@ const CssDrawings = () => {
             04.
           </h2>
           <h2 className="font-red-hat font-bold text-[32px] max-md:text-[28px] max-sm:text-2xl whitespace-nowrap">
-            CSS Drawings
+            {lang === "zh-TW" ? "CSS繪圖" : "CSS Drawings"}
           </h2>
           <hr className="h-[1px] bg-font w-full ml-4 opacity-50" />
         </div>
