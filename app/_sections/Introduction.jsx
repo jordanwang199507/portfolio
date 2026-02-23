@@ -38,8 +38,8 @@ const Introduction = () => {
 
           <p className="leading-10 max-sm:leading-8 mt-6 text-base text-secondary max-md:text-sm font-red-hat font-light">
             {lang === "zh-TW"
-              ? "具備中英文雙語能力的前端工程師，擁有兩年以上使用 JavaScript、HTML、CSS 開發可用性高且具無障礙考量的使用者介面的經驗。擅長問題解決與團隊協作，並能交付易維護、重視效能的程式碼，提升整體使用體驗與可及性。"
-              : "Bilingual front-end developer fluent in English and Mandarin, with over two years of experience developing accessible, high-quality user interfaces using JavaScript, HTML, and CSS. Skilled in problem-solving, collaboration, and delivering maintainable, performance-focused code that enhances usability and accessibility."}
+              ? "具備 4+ 年 Web 平台開發與企業系統整合經驗，專注於系統架構設計與技術整合。熟悉 API 設計、AWS 雲端部署、效能優化，並能將複雜需求拆解為可擴充且具落地性的解決方案。擅長進行技術探索（Technical Discovery）、PoC 驗證開發，以及協調跨部門團隊以確保技術方案與商業目標一致。具中英雙語溝通能力，能進行客戶面對面技術說明與需求釐清。期望於技術解決方案、系統整合或技術架構相關職位中，發揮連結工程與商業價值的能力。"
+              : "Systems-minded engineer with 4+ years of experience in developing and integrating web platforms and enterprise systems. Experienced in API design, cloud deployment (AWS), performance optimization, and breaking down complex requirements into scalable solutions. Proficient in technical discovery, developing Proof-of-Concept demos, and aligning cross-functional teams with business outcomes. Bilingual in English and Mandarin, with experience in customer-facing communication and technical explanation. Looking to apply skills in Technical Solutions, System Integration, or Technical Architect positions that connect engineering and business."}
           </p>
 
           <div className="mt-8">

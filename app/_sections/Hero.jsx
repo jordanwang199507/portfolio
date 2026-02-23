@@ -59,7 +59,7 @@ const Hero = () => {
 
           <AnimatedParallax
             delay={6}
-            className="absolute right-[25%] bottom-[35%] rotate-[15deg] max-sm:bottom-[25%] scale-90"
+            className="absolute right-[15%] bottom-[35%] rotate-[15deg] max-sm:bottom-[25%] scale-90"
           >
             <PokeBallUltra />
           </AnimatedParallax>
@@ -94,14 +94,14 @@ const Hero = () => {
               )}
             </h1>
 
-            <h1 className="font-red-hat font-bold text-5xl max-2xl:text-4xl max-md:text-3xl max-sm:text-2xl text-secondary">
+            <h1 className="font-red-hat font-bold text-5xl max-2xl:text-4xl max-md:text-3xl max-sm:text-2xl text-secondary leading-12">
               {showLine3 && (
                 <Typewriter
                   key={`hero-line3-${lang}`}
                   words={[
                     lang === "zh-TW"
-                      ? "把想法變成流暢又有互動感的網站體驗。"
-                      : "Turning ideas into interactive web experiences.",
+                      ? "打造具可擴充性的系統架構，連結技術與商業價值。"
+                      : "Designing scalable systems that connect technology with business outcomes.",
                   ]}
                   typeSpeed={50}
                   loop={1}
@@ -154,12 +154,16 @@ const Hero = () => {
                   </div>,
                   <div className="item" key={`frontend-${lang}-${i}`}>
                     <p className="text-[32px] max-md:text-[28px] max-sm:text-2xl font-bold">
-                      {lang === "zh-TW" ? "前端工程師" : "FRONT END DEVELOPER"}
+                      {lang === "zh-TW"
+                        ? "系統整合與技術問題解決"
+                        : "INTEGRATION-FOCUSED PROBLEM SOLVER"}
                     </p>
                   </div>,
                   <div className="item" key={`rookie-${lang}-${i}`}>
                     <p className="text-[32px] max-md:text-[28px] max-sm:text-2xl font-bold">
-                      {lang === "zh-TW" ? "新手設計師" : "ROOKIE DESIGNER"}
+                      {lang === "zh-TW"
+                        ? "技術顧問"
+                        : "TECHNICAL SOLUTIONS SPECIALIST"}
                     </p>
                   </div>,
                 ])}

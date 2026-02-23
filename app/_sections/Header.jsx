@@ -172,7 +172,7 @@ const Header = () => {
             >
               <a
                 className="relative flex items-center bg-background justify-center z-50 border-2 border-foreground pr-3 rounded-lg  w-fit transition-transform duration-200 group-hover:text-foreground group-hover:-translate-y-[3px] group-hover:-translate-x-1 group-active:-translate-y-[1px] group-active:-translate-x-0.5 group-active:inset-ring-2 group-active:inset-ring-foreground cursor-pointer text-sm"
-                href="/assets/resume2025.pdf"
+                href="/assets/resume2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
