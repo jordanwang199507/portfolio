@@ -48,7 +48,7 @@ const Hero = () => {
       id="hero"
       className="h-screen flex flex-col relative min-h-fit max-lg:h-screen max-lg:pt-0 max-lg:mt-0"
     >
-      <div className="relative flex-1/8 min-h-fit flex pt-20">
+      <div className="relative flex-1/8 min-h-fit flex pt-14">
         <div className="global-container w-full flex items-center overflow-hidden">
           <AnimatedParallax
             delay={6}
@@ -94,14 +94,14 @@ const Hero = () => {
               )}
             </h1>
 
-            <h1 className="font-red-hat font-bold text-5xl max-2xl:text-4xl max-md:text-3xl max-sm:text-2xl text-secondary leading-12">
+            <h1 className="font-red-hat font-bold text-4xl max-2xl:text-3xl max-md:text-2xl max-sm:text-2xl text-secondary leading-12">
               {showLine3 && (
                 <Typewriter
                   key={`hero-line3-${lang}`}
                   words={[
                     lang === "zh-TW"
                       ? "打造具可擴充性的系統架構，連結技術與商業價值。"
-                      : "Designing scalable systems that connect technology with business outcomes.",
+                      : "Designing scalable systems that connect tech with business outcomes.",
                   ]}
                   typeSpeed={50}
                   loop={1}
